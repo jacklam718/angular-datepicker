@@ -22,6 +22,6 @@
     "commit": "03102ee7365353f3dfd5bb351fc1f5edbc7227c4"
   },
   "_source": "https://github.com/LodestoneSocial/angular-datepicker",
-  "_target": "~1.0.5",
+  "_target": "~1.5",
   "_originalSource": "angular-native-picker"
 }
