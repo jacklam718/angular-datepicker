@@ -93,7 +93,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                 // and set as readonly to prevent keyboard popup.
                 ELEMENT.autofocus = ELEMENT == document.activeElement
                 ELEMENT.type = 'text'
-                ELEMENT.readOnly = !SETTINGS.editable
+                // ELEMENT.readOnly = !SETTINGS.editable
                 ELEMENT.id = ELEMENT.id || STATE.id
 
 
@@ -558,6 +558,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
     // On focus/click, open the picker and adjust the root “focused” state.
     angular.element(document.querySelectorAll('#' + STATE.id)).on('focus', focusToOpen);
     angular.element(document.querySelectorAll('#' + STATE.id)).on('click', focusToOpen);
+    // angular.element(document.querySelectorAll('#' + STATE.id)).on('touchstart', focusToOpen);
 
         // Only bind keydown events if the element isn’t editable.
         if ( !SETTINGS.editable ) {
@@ -737,7 +738,9 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
     function focusToOpen( event ) {
 
         // Stop the event from propagating to the doc.
-        event.stopPropagation()
+        event.stopPropagation();
+
+        event.target.blur();
 
         // If it’s a focus event, add the “focused” class to the root.
         if ( event.type == 'focus' ) {
@@ -746,7 +749,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
         }
 
         // And then finally open the picker.
-        P.open()
+        P.open();
     }
 
 
