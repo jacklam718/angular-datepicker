@@ -36,6 +36,33 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
   var SETTINGS;
 
+var Environment = {
+    //mobile or desktop compatible event name, to be used with '.on' function
+    TOUCH_DOWN_EVENT_NAME: 'mousedown touchstart',
+    TOUCH_UP_EVENT_NAME: 'mouseup touchend',
+    TOUCH_MOVE_EVENT_NAME: 'mousemove touchmove',
+    TOUCH_DOUBLE_TAB_EVENT_NAME: 'dblclick dbltap',
+
+    isAndroid: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    isBlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    isIOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    isOpera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    isWindows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    isMobile: function() {
+        return (Environment.isAndroid() || Environment.isBlackBerry() || Environment.isIOS() || Environment.isOpera() || Environment.isWindows());
+    }
+};
+
   // Merge the defaults and options passed.
   if (COMPONENT) {
     SETTINGS = COMPONENT.defaults;
@@ -58,6 +85,10 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
         // The element node wrapper into a jQuery object.
         $ELEMENT = angular.element(ELEMENT),
 
+        nativePicker = function(){
+            return "enene";
+        },
+
 
         // Pseudo picker constructor.
         PickerInstance = function() {
@@ -77,6 +108,10 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
              * Initialize everything
              */
             start: function() {
+
+                // If mobile revert to native
+
+                if ( Environment.isMobile() ) return;
 
                 // If it’s already started, do nothing.
                 if ( STATE && STATE.start ) return P
@@ -740,7 +775,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
         // Stop the event from propagating to the doc.
         event.stopPropagation();
 
-        event.target.blur();
+        // event.target.blur();
 
         // If it’s a focus event, add the “focused” class to the root.
         if ( event.type == 'focus' ) {

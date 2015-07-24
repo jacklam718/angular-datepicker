@@ -1,6 +1,6 @@
 {
   "name": "angular-native-datepicker",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": [
     "./build/themes/default.css",
     "./build/themes/default.date.css",
@@ -15,10 +15,10 @@
     "angular": "latest"
   },
   "homepage": "https://github.com/LodestoneSocial/angular-datepicker",
-  "_release": "1.0.5",
+  "_release": "1.0.7",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.5",
+    "tag": "v1.0.7",
     "commit": "03102ee7365353f3dfd5bb351fc1f5edbc7227c4"
   },
   "_source": "https://github.com/LodestoneSocial/angular-datepicker",
