@@ -1,7 +1,7 @@
 {
-  "name": "angular-datepicker",
+  "name": "angular-native-picker",
   "version": "1.0.6",
-  "title": "angular-datepicker",
+  "title": "angular-native-picker",
   "description": "The mobile-friendly, responsive, and lightweight Angular date & time input picker.",
   "author": {
     "name": "Jack",
