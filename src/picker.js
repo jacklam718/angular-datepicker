@@ -353,7 +353,8 @@ var Environment = {
                     $ELEMENT.off( 'focus.' + STATE.id );
           $ELEMENT.triggerHandler( 'focus' );
                     setTimeout( function() {
-                        angular.element(document.querySelectorAll('#' + STATE.id)).on( 'focus', focusToOpen )
+                        // a bug in datetime picker that will reopen after blur
+                        // angular.element(document.querySelectorAll('#' + STATE.id)).on( 'focus', focusToOpen )
                     }, 0 )
                 }
 
@@ -591,9 +592,11 @@ var Environment = {
       ELEMENT.value;
 
     // On focus/click, open the picker and adjust the root “focused” state.
-    angular.element(document.querySelectorAll('#' + STATE.id)).on('focus', focusToOpen);
+
+    // a bug in datetime picker that will reopen after blur
+    // angular.element(document.querySelectorAll('#' + STATE.id)).on('focus', focusToOpen);
     angular.element(document.querySelectorAll('#' + STATE.id)).on('click', focusToOpen);
-    // angular.element(document.querySelectorAll('#' + STATE.id)).on('touchstart', focusToOpen);
+    angular.element(document.querySelectorAll('#' + STATE.id)).on('touchstart', focusToOpen);
 
         // Only bind keydown events if the element isn’t editable.
         if ( !SETTINGS.editable ) {
@@ -1014,5 +1017,3 @@ return PickerConstructor
 
 
 }));
-
-
