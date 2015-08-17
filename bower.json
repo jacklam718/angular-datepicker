@@ -1,5 +1,5 @@
 {
-  "name": "angular-native-datepicker-reboot",
+  "name": "angular-native-datepicker",
   "version": "1.0.7",
   "main": [
   	"./build/themes/default.css",

@@ -4,14 +4,12 @@
   "title": "angular-datepicker",
   "description": "The mobile-friendly, responsive, and lightweight Angular date & time input picker.",
   "author": {
-    "name": "Amsul",
-    "email": "reach@amsul.ca",
-    "url": "http://amsul.ca"
+    "name": "Jack",
+    "email": "jacklam718@gmail.com"
   },
   "licenses": [
     {
-      "type": "MIT",
-      "url": "http://amsul.ca/MIT"
+      "type": "MIT"
     }
   ],
   "keywords": [
@@ -28,7 +26,7 @@
   "main": "src/picker.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LodestoneSocial/angular-datepicker"
+    "url": "https://github.com/jacklam718/angular-datepicker"
   },
   "dependencies": {
    },
